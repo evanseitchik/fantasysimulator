@@ -49,9 +49,9 @@ def main():
         Player("Will K.", 110.61, 20.51, 1),
         Player("Asif", 103.80, 18.00, 2),
         Player("Michael", 114.45, 25.89, 3),
-        Player("Evan", 97.11, 20.51, 4),
-        Player("Ben", 108.41, 17.91, 5),
-        Player("Andrew", 97.05, 17.40, 6)
+        Player("Evan", 97.11, 20.51, 5),
+        Player("Ben", 108.41, 17.91, 6),
+        Player("Will V.", 92.44, 21.14, 4)
     ]
 
     our_league = League(dudes)
