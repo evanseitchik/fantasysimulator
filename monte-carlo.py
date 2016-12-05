@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 from __future__ import print_function
 import numpy
+import argparse
 
 class Player:
     def __init__(self, name, avgscore, stdev, seed):
@@ -36,7 +39,12 @@ class Tournament:
         
 
 def main():
-        
+
+    parser = argparse.ArgumentParser(description='Simulate 6-person fantasy playoffs.')
+    parser.add_argument('--simulations', '-s',
+                        type=int, default=1,
+                        help='the number of simulations')
+    args = parser.parse_args()
     dudes = [
         Player("Will K.", 110.61, 20.51, 1),
         Player("Asif", 103.80, 18.00, 2),
@@ -48,7 +56,8 @@ def main():
 
     our_league = League(dudes)
     tournament = Tournament()
-    print(tournament.run(our_league))
+    winners = [tournament.run(our_league) for i in range(args.simulations)]
+    print('\n'.join(winners))
 
 if __name__=='__main__':
     main()
